@@ -7,5 +7,6 @@
     <converters:AddConverter x:Key="Add" />
     <converters:SubConverter x:Key="Sub" />
     <converters:ThicknessToGridHeightConverter x:Key="ThicknessToGridHeight" />
+    <converters:ThicknessToDoubleConverter x:Key="ThicknessToDouble" />
 
 </ResourceDictionary>

@@ -46,7 +46,7 @@
     <!--  Button  -->
     <SolidColorBrush x:Key="ButtonNormalShadow" Color="#FFADAFBC" />
     <SolidColorBrush x:Key="ButtonPrimaryShadow" Color="#FF006BB3" />
-    <SolidColorBrush x:Key="ButtonSuccessShadow" Color="#FF92CC41" />
+    <SolidColorBrush x:Key="ButtonSuccessShadow" Color="#FF4AA52E" />
     <SolidColorBrush x:Key="ButtonWarningShadow" Color="#FFE59400" />
     <SolidColorBrush x:Key="ButtonErrorShadow" Color="#FF8C2022" />
 

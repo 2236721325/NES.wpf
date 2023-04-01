@@ -23,14 +23,58 @@
                 <Label Content="Normal" Style="{StaticResource LabelBaseStyle}" />
             </StackPanel>
             <Label Content="--------------------------Buttons------------------------------" Style="{StaticResource LabelBaseStyle}" />
-            <StackPanel Margin="20,20,0,0" Orientation="Horizontal">
+            <WrapPanel Margin="20,20,0,20" Orientation="Horizontal">
+
 
                 <Button
-                    Width="300"
                     Height="50"
+                    Margin="20,0"
+                    Content="Normal"
+                    Style="{StaticResource ButtonNormal}" />
+                <Button
+                    Height="50"
+                    Margin="20,0"
                     Content="Primary"
                     Style="{StaticResource ButtonPrimary}" />
+                <Button
+                    Height="50"
+                    Margin="20,0"
+                    Content="Success"
+                    Style="{StaticResource ButtonSuccess}" />
+                <Button
+                    Height="50"
+                    Margin="20,0"
+                    Content="Warning"
+                    Style="{StaticResource ButtonWarning}" />
+                <Button
+                    Height="50"
+                    Margin="20,0"
+                    Content="Error"
+                    Style="{StaticResource ButtonError}" />
+
+
+            </WrapPanel>
+            <Label Content="--------------------------Containers------------------------------" Style="{StaticResource LabelBaseStyle}" />
+
+            <StackPanel Orientation="Vertical">
+                <Grid Width="400" Height="200">
+
+                    <Border
+                        Margin="10"
+                        BorderBrush="Black"
+                        BorderThickness="1" />
+                    <Label
+                        HorizontalAlignment="Center"
+                        Content="Containers"
+                        Style="{StaticResource LabelBaseStyle}" />
+
+                </Grid>
+
             </StackPanel>
+
+
+
+
         </StackPanel>
 
 

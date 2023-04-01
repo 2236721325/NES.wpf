@@ -4,8 +4,7 @@
     xmlns:attach="clr-namespace:NES.Core.Controls.Attachs"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <sys:Int16 x:Key="Two">2</sys:Int16>
-    <GridLength x:Key="demo" />
+
 
     <Style x:Key="ButtonPrimary" TargetType="{x:Type Button}">
 
@@ -14,7 +13,7 @@
         <Setter Property="FontFamily" Value="{StaticResource Primary}" />
         <Setter Property="BorderBrush" Value="Black" />
         <Setter Property="BorderThickness" Value="5" />
-        <Setter Property="FontSize" Value="{StaticResource HeadFontSize}" />
+        <Setter Property="FontSize" Value="{StaticResource TextFontSize}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -57,14 +56,14 @@
 
 
                             <Grid.RowDefinitions>
-                                <RowDefinition x:Name="one" Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
-                                <RowDefinition Height="*" />
                                 <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
 
@@ -110,26 +109,22 @@
                                 x:Name="grid_2_2"
                                 Grid.Row="2"
                                 Grid.Column="2"
+                                Width="{TemplateBinding Property=BorderThickness,
+                                                        Converter={StaticResource ThicknessToDouble}}"
+                                Height="{TemplateBinding Property=BorderThickness,
+                                                         Converter={StaticResource ThicknessToDouble}}"
                                 Background="{StaticResource ButtonPrimaryShadow}" />
 
 
 
 
-
-                            <Grid
-                                x:Name="Content"
+                            <ContentPresenter
                                 Grid.Row="1"
-                                Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            </Grid>
+                                Grid.Column="1"
+                                Margin="5,7"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+
 
                         </Grid>
 
@@ -140,6 +135,12 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" Value="{StaticResource ButtonPrimaryEnter}" />
+
+                            <Setter TargetName="grid_2_2" Property="Grid.Width" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_2_2" Property="Grid.Height" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+
+
+
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="grid_0_0" Property="Grid.Background" Value="{StaticResource ButtonPrimaryShadow}" />
@@ -162,4 +163,643 @@
 
 
     </Style>
+
+
+
+    <Style x:Key="ButtonNormal" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+        <Setter Property="Background" Value="{StaticResource NomalColorBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource Primary}" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="5" />
+        <Setter Property="FontSize" Value="{StaticResource TextFontSize}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid
+                            x:Name="top_center"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            x:Name="down_center"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Background="{TemplateBinding BorderBrush}" />
+
+
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Background="{TemplateBinding Background}">
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Grid
+                                x:Name="grid_0_0"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Background="{TemplateBinding Background}" />
+
+                            <Grid
+                                x:Name="grid_1_0"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Background="{TemplateBinding Background}" />
+                            <Grid
+                                x:Name="grid_2_0"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Background="{StaticResource ButtonNormalShadow}" />
+                            <Grid
+                                x:Name="grid_0_1"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Background="{TemplateBinding Background}" />
+
+
+                            <Grid
+                                x:Name="grid_2_1"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Background="{StaticResource ButtonNormalShadow}" />
+                            <Grid
+                                x:Name="grid_0_2"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Background="{StaticResource ButtonNormalShadow}" />
+                            <Grid
+                                x:Name="grid_1_2"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Background="{StaticResource ButtonNormalShadow}" />
+                            <Grid
+                                x:Name="grid_2_2"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Width="{TemplateBinding Property=BorderThickness,
+                                                        Converter={StaticResource ThicknessToDouble}}"
+                                Height="{TemplateBinding Property=BorderThickness,
+                                                         Converter={StaticResource ThicknessToDouble}}"
+                                Background="{StaticResource ButtonNormalShadow}" />
+
+
+
+
+                            <ContentPresenter
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="5,7"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+
+
+                        </Grid>
+
+
+
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ButtonNormalEnter}" />
+
+                            <Setter TargetName="grid_2_2" Property="Grid.Width" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_2_2" Property="Grid.Height" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+
+
+
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="grid_0_0" Property="Grid.Background" Value="{StaticResource ButtonNormalShadow}" />
+                            <Setter TargetName="grid_0_1" Property="Grid.Background" Value="{StaticResource ButtonNormalShadow}" />
+                            <Setter TargetName="grid_0_2" Property="Grid.Background" Value="{StaticResource ButtonNormalShadow}" />
+                            <Setter TargetName="grid_1_0" Property="Grid.Background" Value="{StaticResource ButtonNormalShadow}" />
+                            <Setter TargetName="grid_2_0" Property="Grid.Background" Value="{StaticResource ButtonNormalShadow}" />
+                            <Setter TargetName="grid_2_1" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_2_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_1_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_1_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+
+
+    </Style>
+
+    <Style x:Key="ButtonSuccess" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="{StaticResource WhiteTextColorBrush}" />
+        <Setter Property="Background" Value="{StaticResource SuccessColorBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource Primary}" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="5" />
+        <Setter Property="FontSize" Value="{StaticResource TextFontSize}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid
+                            x:Name="top_center"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            x:Name="down_center"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Background="{TemplateBinding BorderBrush}" />
+
+
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Background="{TemplateBinding Background}">
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Grid
+                                x:Name="grid_0_0"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Background="{TemplateBinding Background}" />
+
+                            <Grid
+                                x:Name="grid_1_0"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Background="{TemplateBinding Background}" />
+                            <Grid
+                                x:Name="grid_2_0"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Background="{StaticResource ButtonSuccessShadow}" />
+                            <Grid
+                                x:Name="grid_0_1"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Background="{TemplateBinding Background}" />
+
+
+                            <Grid
+                                x:Name="grid_2_1"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Background="{StaticResource ButtonSuccessShadow}" />
+                            <Grid
+                                x:Name="grid_0_2"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Background="{StaticResource ButtonSuccessShadow}" />
+                            <Grid
+                                x:Name="grid_1_2"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Background="{StaticResource ButtonSuccessShadow}" />
+                            <Grid
+                                x:Name="grid_2_2"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Width="{TemplateBinding Property=BorderThickness,
+                                                        Converter={StaticResource ThicknessToDouble}}"
+                                Height="{TemplateBinding Property=BorderThickness,
+                                                         Converter={StaticResource ThicknessToDouble}}"
+                                Background="{StaticResource ButtonSuccessShadow}" />
+
+
+
+
+                            <ContentPresenter
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="5,7"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+
+
+                        </Grid>
+
+
+
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ButtonSuccessEnter}" />
+
+                            <Setter TargetName="grid_2_2" Property="Grid.Width" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_2_2" Property="Grid.Height" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+
+
+
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="grid_0_0" Property="Grid.Background" Value="{StaticResource ButtonSuccessShadow}" />
+                            <Setter TargetName="grid_0_1" Property="Grid.Background" Value="{StaticResource ButtonSuccessShadow}" />
+                            <Setter TargetName="grid_0_2" Property="Grid.Background" Value="{StaticResource ButtonSuccessShadow}" />
+                            <Setter TargetName="grid_1_0" Property="Grid.Background" Value="{StaticResource ButtonSuccessShadow}" />
+                            <Setter TargetName="grid_2_0" Property="Grid.Background" Value="{StaticResource ButtonSuccessShadow}" />
+                            <Setter TargetName="grid_2_1" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_2_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_1_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_1_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+
+
+    </Style>
+
+    <Style x:Key="ButtonWarning" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+        <Setter Property="Background" Value="{StaticResource WarningColorBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource Primary}" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="5" />
+        <Setter Property="FontSize" Value="{StaticResource TextFontSize}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid
+                            x:Name="top_center"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            x:Name="down_center"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Background="{TemplateBinding BorderBrush}" />
+
+
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Background="{TemplateBinding Background}">
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Grid
+                                x:Name="grid_0_0"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Background="{TemplateBinding Background}" />
+
+                            <Grid
+                                x:Name="grid_1_0"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Background="{TemplateBinding Background}" />
+                            <Grid
+                                x:Name="grid_2_0"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Background="{StaticResource ButtonWarningShadow}" />
+                            <Grid
+                                x:Name="grid_0_1"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Background="{TemplateBinding Background}" />
+
+
+                            <Grid
+                                x:Name="grid_2_1"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Background="{StaticResource ButtonWarningShadow}" />
+                            <Grid
+                                x:Name="grid_0_2"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Background="{StaticResource ButtonWarningShadow}" />
+                            <Grid
+                                x:Name="grid_1_2"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Background="{StaticResource ButtonWarningShadow}" />
+                            <Grid
+                                x:Name="grid_2_2"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Width="{TemplateBinding Property=BorderThickness,
+                                                        Converter={StaticResource ThicknessToDouble}}"
+                                Height="{TemplateBinding Property=BorderThickness,
+                                                         Converter={StaticResource ThicknessToDouble}}"
+                                Background="{StaticResource ButtonWarningShadow}" />
+
+
+
+
+                            <ContentPresenter
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="5,7"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+
+
+                        </Grid>
+
+
+
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ButtonWarningEnter}" />
+
+                            <Setter TargetName="grid_2_2" Property="Grid.Width" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_2_2" Property="Grid.Height" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+
+
+
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="grid_0_0" Property="Grid.Background" Value="{StaticResource ButtonWarningShadow}" />
+                            <Setter TargetName="grid_0_1" Property="Grid.Background" Value="{StaticResource ButtonWarningShadow}" />
+                            <Setter TargetName="grid_0_2" Property="Grid.Background" Value="{StaticResource ButtonWarningShadow}" />
+                            <Setter TargetName="grid_1_0" Property="Grid.Background" Value="{StaticResource ButtonWarningShadow}" />
+                            <Setter TargetName="grid_2_0" Property="Grid.Background" Value="{StaticResource ButtonWarningShadow}" />
+                            <Setter TargetName="grid_2_1" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_2_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_1_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_1_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+
+
+    </Style>
+
+    <Style x:Key="ButtonError" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="{StaticResource WhiteTextColorBrush}" />
+        <Setter Property="Background" Value="{StaticResource ErrorColorBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource Primary}" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="5" />
+        <Setter Property="FontSize" Value="{StaticResource TextFontSize}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid
+                            x:Name="top_center"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            x:Name="down_center"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Background="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Background="{TemplateBinding BorderBrush}" />
+
+
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Background="{TemplateBinding Background}">
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{TemplateBinding Property=BorderThickness, Converter={StaticResource ThicknessToGridHeight}}" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Grid
+                                x:Name="grid_0_0"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Background="{TemplateBinding Background}" />
+
+                            <Grid
+                                x:Name="grid_1_0"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Background="{TemplateBinding Background}" />
+                            <Grid
+                                x:Name="grid_2_0"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Background="{StaticResource ButtonErrorShadow}" />
+                            <Grid
+                                x:Name="grid_0_1"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Background="{TemplateBinding Background}" />
+
+
+                            <Grid
+                                x:Name="grid_2_1"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Background="{StaticResource ButtonErrorShadow}" />
+                            <Grid
+                                x:Name="grid_0_2"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Background="{StaticResource ButtonErrorShadow}" />
+                            <Grid
+                                x:Name="grid_1_2"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Background="{StaticResource ButtonErrorShadow}" />
+                            <Grid
+                                x:Name="grid_2_2"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Width="{TemplateBinding Property=BorderThickness,
+                                                        Converter={StaticResource ThicknessToDouble}}"
+                                Height="{TemplateBinding Property=BorderThickness,
+                                                         Converter={StaticResource ThicknessToDouble}}"
+                                Background="{StaticResource ButtonErrorShadow}" />
+
+
+
+
+                            <ContentPresenter
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="5,7"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+
+
+                        </Grid>
+
+
+
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ButtonErrorEnter}" />
+
+                            <Setter TargetName="grid_2_2" Property="Grid.Width" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_2_2" Property="Grid.Height" Value="{Binding Path=(attach:ButtonAttach.EnterShadow), RelativeSource={RelativeSource TemplatedParent}}" />
+
+
+
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="grid_0_0" Property="Grid.Background" Value="{StaticResource ButtonErrorShadow}" />
+                            <Setter TargetName="grid_0_1" Property="Grid.Background" Value="{StaticResource ButtonErrorShadow}" />
+                            <Setter TargetName="grid_0_2" Property="Grid.Background" Value="{StaticResource ButtonErrorShadow}" />
+                            <Setter TargetName="grid_1_0" Property="Grid.Background" Value="{StaticResource ButtonErrorShadow}" />
+                            <Setter TargetName="grid_2_0" Property="Grid.Background" Value="{StaticResource ButtonErrorShadow}" />
+                            <Setter TargetName="grid_2_1" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_2_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_1_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="grid_1_2" Property="Grid.Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+
+
+    </Style>
+
+
+
+
+
 </ResourceDictionary>
