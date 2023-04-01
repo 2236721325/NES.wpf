@@ -7,10 +7,6 @@
     <system:Double x:Key="HeadFontSize">20</system:Double>
     <system:Double x:Key="SubHeadFontSize">16</system:Double>
     <system:Double x:Key="TextFontSize">12</system:Double>
-
-
-
-
     <FontFamily x:Key="PressStart2P">pack://application:,,,/Nes.Core;component/Resources/Fonts/#Press Start 2P</FontFamily>
     <FontFamily x:Key="Primary">pack://application:,,,/Nes.Core;component/Resources/Fonts/#Press Start 2P</FontFamily>
 </ResourceDictionary>

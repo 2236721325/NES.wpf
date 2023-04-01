@@ -1,4 +1,25 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:nes="clr-namespace:NES.Core.Controls">
+    <Style TargetType="nes:Container">
+        <Setter Property="Template">
+            <Setter.Value>
+
+                <ControlTemplate TargetType="nes:Container">
+                    <Grid>
+                        <Label
+                            x:Name="title"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Content="{TemplateBinding Title}"
+                            FontFamily="{StaticResource Primary}"
+                            FontSize="{StaticResource HeadFontSize}" />
+                        <ContentPresenter Margin="30" />
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

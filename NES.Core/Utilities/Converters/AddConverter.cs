@@ -8,7 +8,6 @@ using System.Windows.Data;
 
 namespace NES.Core.Utilities.Converters
 {
-
     public class AddConverter : IValueConverter
     {
 

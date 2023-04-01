@@ -8,5 +8,6 @@
     <converters:SubConverter x:Key="Sub" />
     <converters:ThicknessToGridHeightConverter x:Key="ThicknessToGridHeight" />
     <converters:ThicknessToDoubleConverter x:Key="ThicknessToDouble" />
-
+    <converters:ToPointConverter x:Key="ToPointConverter" />
+    <converters:DivideConverter x:Key="DivideConverter" />
 </ResourceDictionary>

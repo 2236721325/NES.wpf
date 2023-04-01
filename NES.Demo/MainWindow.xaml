@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:NES.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:nes="clr-namespace:NES.Core.Controls;assembly=NES.Core"
     Title="MainWindow"
     Width="800"
     Height="450"
@@ -57,18 +58,40 @@
             <Label Content="--------------------------Containers------------------------------" Style="{StaticResource LabelBaseStyle}" />
 
             <StackPanel Orientation="Vertical">
-                <Grid Width="400" Height="200">
+                <!--<Grid Width="400" Height="200">
 
                     <Border
                         Margin="10"
                         BorderBrush="Black"
-                        BorderThickness="1" />
+                        BorderThickness="2" />
                     <Label
                         HorizontalAlignment="Center"
+                        Panel.ZIndex="1"
+                        Background="Blue"
                         Content="Containers"
                         Style="{StaticResource LabelBaseStyle}" />
 
                 </Grid>
+                <Button Content="Hekk   " />-->
+                <nes:Container
+                    Title="Container"
+                    Width="400"
+                    Height="200">
+                    <TextBlock
+                        FontFamily="{StaticResource Primary}"
+                        Text="Good morning. Thou hast had a good night's sleep, I hope."
+                        TextWrapping="Wrap" />
+                </nes:Container>
+
+
+                <!--<Path Stroke="Black" StrokeThickness="2">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry StartPoint="0,0" EndPoint="0,200" />
+
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>-->
 
             </StackPanel>
 

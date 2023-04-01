@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Globalization;
-using System.Windows;
 using System.Windows.Data;
 
 namespace NES.Core.Utilities.Converters
 {
-    public class DoubleConverter : IValueConverter
+    public class DivideConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null)
+            if (value != null && value is double)
             {
-                var grid = (GridLength) value;
-                return grid.Value;
+                double actualWidth = (double)value;
+                double offset = double.Parse(parameter.ToString());
+                return actualWidth /offset;
             }
             return Binding.DoNothing;
         }
