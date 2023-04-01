@@ -1,0 +1,62 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="NormalColor">#FFFFFFFF</Color>
+    <Color x:Key="PrimaryColor">#FF209CEE</Color>
+
+
+
+
+    <Color x:Key="SuccessColor">#FF92CC41</Color>
+    <Color x:Key="WarningColor">#FFF7D51D</Color>
+
+    <Color x:Key="ErrorColor">#db3340</Color>
+
+
+    <Color x:Key="DisableColor">#FFE5E5E5</Color>
+
+
+
+    <Color x:Key="PrimaryTextColor">#FF212529</Color>
+    <Color x:Key="WhiteTextColor">#FFFFFFFF</Color>
+
+
+
+
+
+
+
+
+    <SolidColorBrush x:Key="PrimaryTextBrush" Color="{StaticResource PrimaryTextColor}" />
+    <SolidColorBrush x:Key="WhiteTextColorBrush" Color="{StaticResource WhiteTextColor}" />
+
+
+
+
+    <SolidColorBrush x:Key="NomalColorBrush" Color="{StaticResource NormalColor}" />
+
+    <SolidColorBrush x:Key="PrimaryColorBrush" Color="{StaticResource PrimaryColor}" />
+
+    <SolidColorBrush x:Key="SuccessColorBrush" Color="{StaticResource SuccessColor}" />
+    <SolidColorBrush x:Key="WarningColorBrush" Color="{StaticResource WarningColor}" />
+
+    <SolidColorBrush x:Key="ErrorColorBrush" Color="{StaticResource ErrorColor}" />
+    <SolidColorBrush x:Key="DisableColorBrush" Color="{StaticResource DisableColor}" />
+
+
+    <!--  Button  -->
+    <SolidColorBrush x:Key="ButtonNormalShadow" Color="#FFADAFBC" />
+    <SolidColorBrush x:Key="ButtonPrimaryShadow" Color="#FF006BB3" />
+    <SolidColorBrush x:Key="ButtonSuccessShadow" Color="#FF92CC41" />
+    <SolidColorBrush x:Key="ButtonWarningShadow" Color="#FFE59400" />
+    <SolidColorBrush x:Key="ButtonErrorShadow" Color="#FF8C2022" />
+
+    <SolidColorBrush x:Key="ButtonNormalEnter" Color="#FFE7E7E7" />
+    <SolidColorBrush x:Key="ButtonPrimaryEnter" Color="#FF108DE0" />
+    <SolidColorBrush x:Key="ButtonSuccessEnter" Color="#FF92CC41" />
+    <SolidColorBrush x:Key="ButtonWarningEnter" Color="#FFF7D51D" />
+    <SolidColorBrush x:Key="ButtonErrorEnter" Color="#FFCE372B" />
+
+
+
+
+</ResourceDictionary>
