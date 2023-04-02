@@ -22,8 +22,13 @@
                     <Label Content="Error" Style="{StaticResource LabelError}" />
                     <Label Content="Disable" Style="{StaticResource LabelDisable}" />
                     <Label Content="Normal" Style="{StaticResource LabelBaseStyle}" />
+
                 </StackPanel>
             </nes:Container>
+
+
+
+
             <nes:Container Title="Button" Margin="20">
 
                 <WrapPanel Margin="20,20,0,20" Orientation="Horizontal">
@@ -58,6 +63,48 @@
 
                 </WrapPanel>
 
+            </nes:Container>
+
+            <nes:Container Title="中文字体" Margin="20">
+                <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+
+                    <Label
+                        Content="这是中文的像素字体 Square"
+                        FontFamily="{StaticResource DottedSongtiSquare}"
+                        FontSize="30"
+                        Style="{StaticResource LabelBaseStyle}" />
+                    <Label
+                        Content="这是中文的像素字体 Square 加粗"
+                        FontFamily="{StaticResource DottedSongtiSquare}"
+                        FontSize="30"
+                        FontWeight="Bold"
+                        Style="{StaticResource LabelBaseStyle}" />
+
+
+                    <Label
+                        Content="这是中文的像素字体 Diamond"
+                        FontFamily="{StaticResource DottedSongtiDiamond}"
+                        FontSize="30"
+                        Style="{StaticResource LabelBaseStyle}" />
+                    <Label
+                        Content="这是中文的像素字体 Diamond 加粗"
+                        FontFamily="{StaticResource DottedSongtiDiamond}"
+                        FontSize="30"
+                        FontWeight="Bold"
+                        Style="{StaticResource LabelBaseStyle}" />
+                    <Label
+                        Content="这是中文的像素字体 Circle"
+                        FontFamily="{StaticResource DottedSongtiCircle}"
+                        FontSize="30"
+                        Style="{StaticResource LabelBaseStyle}" />
+                    <Label
+                        Content="这是中文的像素字体 Circle 加粗"
+                        FontFamily="{StaticResource DottedSongtiCircle}"
+                        FontSize="30"
+                        FontWeight="Bold"
+                        Style="{StaticResource LabelBaseStyle}" />
+
+                </StackPanel>
             </nes:Container>
 
 

@@ -7,10 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Fonts\DottedSongtiCircleRegular.otf" />
+    <None Remove="Resources\Fonts\DottedSongtiDiamondRegular.otf" />
+    <None Remove="Resources\Fonts\DottedSongtiSquareRegular.otf" />
     <None Remove="Resources\Fonts\PressStart2P-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Fonts\DottedSongtiCircleRegular.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\DottedSongtiDiamondRegular.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\DottedSongtiSquareRegular.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Fonts\PressStart2P-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

@@ -9,4 +9,9 @@
     <system:Double x:Key="TextFontSize">12</system:Double>
     <FontFamily x:Key="PressStart2P">pack://application:,,,/Nes.Core;component/Resources/Fonts/#Press Start 2P</FontFamily>
     <FontFamily x:Key="Primary">pack://application:,,,/Nes.Core;component/Resources/Fonts/#Press Start 2P</FontFamily>
+
+    <FontFamily x:Key="DottedSongtiCircle">pack://application:,,,/Nes.Core;component/Resources/Fonts/#Dotted Songti Circle</FontFamily>
+    <FontFamily x:Key="DottedSongtiDiamond">pack://application:,,,/Nes.Core;component/Resources/Fonts/#Dotted Songti Diamond</FontFamily>
+    <FontFamily x:Key="DottedSongtiSquare">pack://application:,,,/Nes.Core;component/Resources/Fonts/#Dotted Songti Square</FontFamily>
+
 </ResourceDictionary>
