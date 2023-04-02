@@ -1,7 +1,0 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <Style x:Key="test" TargetType="Label">
-        <Setter Property="Foreground" Value="{StaticResource RedBrush}" />
-        <Setter Property="FontFamily" Value="{StaticResource PressStart2P}" />
-    </Style>
-</ResourceDictionary>
