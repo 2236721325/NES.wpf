@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NES.Core", "NES.Core\NES.Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{2BA0A39E-5F0F-4961-BA4D-0BE25CFEEB71}"
 	ProjectSection(SolutionItems) = preProject
+		screenshot\current.png = screenshot\current.png
 		README.md = README.md
 	EndProjectSection
 EndProject

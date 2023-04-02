@@ -70,10 +70,9 @@ namespace NES.Core.Controls
 
         // Using a DependencyProperty as the backing store for TitleFontSize.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TitleFontSizeProperty =
-            DependencyProperty.Register("TitleFontSize", typeof(double), typeof(Container), new PropertyMetadata(20.0));
+            DependencyProperty.Register("TitleFontSize", typeof(double), typeof(Container), new PropertyMetadata(16.0));
 
-
-
+        
 
         public int Thickness
         {
@@ -87,9 +86,40 @@ namespace NES.Core.Controls
 
 
 
+
+
+
+        public HorizontalAlignment TitleHorizontalAlignment
+        {
+            get { return (HorizontalAlignment)GetValue(TitleHorizontalAlignmentProperty); }
+            set { SetValue(TitleHorizontalAlignmentProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for TitleHorizontalAlignment.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TitleHorizontalAlignmentProperty =
+            DependencyProperty.Register("TitleHorizontalAlignment", typeof(HorizontalAlignment), typeof(Container), new PropertyMetadata(HorizontalAlignment.Left));
+
+
+
+
+
+        public Thickness TitleMargin
+        {
+            get { return (Thickness)GetValue(TitleMarginProperty); }
+            set { SetValue(TitleMarginProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for TitleMargin.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TitleMarginProperty =
+            DependencyProperty.Register("TitleMargin", typeof(Thickness), typeof(Container), new PropertyMetadata(new Thickness(30, 0, 30, 0)));
+
+
+
+
         private Label? _title;
         public override void OnApplyTemplate()
         {
+            
             base.OnApplyTemplate();
 
              _title= GetTemplateChild("title") as Label;
@@ -97,17 +127,58 @@ namespace NES.Core.Controls
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
+
+
+            
             var pen = new Pen(new SolidColorBrush(Colors.Black),Thickness);
 
+            Point start, end;
 
-            var start=new Point(Thickness,_title.ActualHeight/2);
-            var end= new Point((this.ActualWidth-_title.ActualWidth)/2, _title.ActualHeight / 2);
-            drawingContext.DrawLine(pen, start, end);
+            switch (TitleHorizontalAlignment)
+            {
+                case HorizontalAlignment.Left:
+                    start = new Point(Thickness, _title.ActualHeight / 2);
+                    end = new Point(TitleMargin.Left, _title.ActualHeight / 2);
+                    drawingContext.DrawLine(pen, start, end);
 
 
-            start = new Point((this.ActualWidth - _title.ActualWidth) / 2+_title.ActualWidth, _title.ActualHeight / 2);
-            end = new Point(this.ActualWidth-Thickness, _title.ActualHeight / 2);
-            drawingContext.DrawLine(pen, start, end);
+                    start = new Point(TitleMargin.Left + _title.ActualWidth, _title.ActualHeight / 2);
+                    end = new Point(this.ActualWidth - Thickness, _title.ActualHeight / 2);
+                    drawingContext.DrawLine(pen, start, end);
+                    break;
+                case HorizontalAlignment.Center:
+                    start = new Point(Thickness, _title.ActualHeight / 2);
+                    end = new Point((this.ActualWidth - _title.ActualWidth) / 2, _title.ActualHeight / 2);
+                    drawingContext.DrawLine(pen, start, end);
+
+
+                    start = new Point((this.ActualWidth - _title.ActualWidth) / 2 + _title.ActualWidth, _title.ActualHeight / 2);
+                    end = new Point(this.ActualWidth - Thickness, _title.ActualHeight / 2);
+                    drawingContext.DrawLine(pen, start, end);
+                    break;
+                case HorizontalAlignment.Right:
+                    start = new Point(Thickness, _title.ActualHeight / 2);
+                    end = new Point( this.ActualWidth-TitleMargin.Right-_title.ActualWidth, _title.ActualHeight / 2);
+                    drawingContext.DrawLine(pen, start, end);
+
+
+                    start = new Point(this.ActualWidth - TitleMargin.Right, _title.ActualHeight / 2);
+                    end = new Point(this.ActualWidth - Thickness, _title.ActualHeight / 2);
+                    drawingContext.DrawLine(pen, start, end);
+                    break;
+                default:
+                    start = new Point(Thickness, _title.ActualHeight / 2);
+                    end = new Point(TitleMargin.Left, _title.ActualHeight / 2);
+                    drawingContext.DrawLine(pen, start, end);
+
+
+                    start = new Point(TitleMargin.Left + _title.ActualWidth, _title.ActualHeight / 2);
+                    end = new Point(this.ActualWidth - Thickness, _title.ActualHeight / 2);
+                    drawingContext.DrawLine(pen, start, end);
+                    break;
+            }
+          
+         
 
             //
 

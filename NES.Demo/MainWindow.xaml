@@ -7,98 +7,109 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:nes="clr-namespace:NES.Core.Controls;assembly=NES.Core"
     Title="MainWindow"
-    Width="800"
+    Width="900"
     Height="450"
     mc:Ignorable="d">
     <Window.Resources />
 
     <ScrollViewer>
         <StackPanel Orientation="Vertical">
-            <Label Content="--------------------------Labels------------------------------" Style="{StaticResource LabelBaseStyle}" />
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <Label Content="Primary" Style="{StaticResource LabelPrimary}" />
-                <Label Content="Success" Style="{StaticResource LabelSuccess}" />
-                <Label Content="Warning" Style="{StaticResource LabelWarning}" />
-                <Label Content="Error" Style="{StaticResource LabelError}" />
-                <Label Content="Disable" Style="{StaticResource LabelDisable}" />
-                <Label Content="Normal" Style="{StaticResource LabelBaseStyle}" />
-            </StackPanel>
-            <Label Content="--------------------------Buttons------------------------------" Style="{StaticResource LabelBaseStyle}" />
-            <WrapPanel Margin="20,20,0,20" Orientation="Horizontal">
+            <nes:Container Title="Label" Margin="20">
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Label Content="Primary" Style="{StaticResource LabelPrimary}" />
+                    <Label Content="Success" Style="{StaticResource LabelSuccess}" />
+                    <Label Content="Warning" Style="{StaticResource LabelWarning}" />
+                    <Label Content="Error" Style="{StaticResource LabelError}" />
+                    <Label Content="Disable" Style="{StaticResource LabelDisable}" />
+                    <Label Content="Normal" Style="{StaticResource LabelBaseStyle}" />
+                </StackPanel>
+            </nes:Container>
+            <nes:Container Title="Button" Margin="20">
+
+                <WrapPanel Margin="20,20,0,20" Orientation="Horizontal">
 
 
-                <Button
-                    Height="50"
-                    Margin="20,0"
-                    Content="Normal"
-                    Style="{StaticResource ButtonNormal}" />
-                <Button
-                    Height="50"
-                    Margin="20,0"
-                    Content="Primary"
-                    Style="{StaticResource ButtonPrimary}" />
-                <Button
-                    Height="50"
-                    Margin="20,0"
-                    Content="Success"
-                    Style="{StaticResource ButtonSuccess}" />
-                <Button
-                    Height="50"
-                    Margin="20,0"
-                    Content="Warning"
-                    Style="{StaticResource ButtonWarning}" />
-                <Button
-                    Height="50"
-                    Margin="20,0"
-                    Content="Error"
-                    Style="{StaticResource ButtonError}" />
+                    <Button
+                        Height="50"
+                        Margin="20,0"
+                        Content="Normal"
+                        Style="{StaticResource ButtonNormal}" />
+                    <Button
+                        Height="50"
+                        Margin="20,0"
+                        Content="Primary"
+                        Style="{StaticResource ButtonPrimary}" />
+                    <Button
+                        Height="50"
+                        Margin="20,0"
+                        Content="Success"
+                        Style="{StaticResource ButtonSuccess}" />
+                    <Button
+                        Height="50"
+                        Margin="20,0"
+                        Content="Warning"
+                        Style="{StaticResource ButtonWarning}" />
+                    <Button
+                        Height="50"
+                        Margin="20,0"
+                        Content="Error"
+                        Style="{StaticResource ButtonError}" />
 
 
-            </WrapPanel>
-            <Label Content="--------------------------Containers------------------------------" Style="{StaticResource LabelBaseStyle}" />
+                </WrapPanel>
 
-            <StackPanel Orientation="Vertical">
-                <!--<Grid Width="400" Height="200">
-
-                    <Border
-                        Margin="10"
-                        BorderBrush="Black"
-                        BorderThickness="2" />
-                    <Label
-                        HorizontalAlignment="Center"
-                        Panel.ZIndex="1"
-                        Background="Blue"
-                        Content="Containers"
-                        Style="{StaticResource LabelBaseStyle}" />
-
-                </Grid>
-                <Button Content="Hekk   " />-->
-                <nes:Container
-                    Title="Container"
-                    Width="400"
-                    Height="200">
-                    <TextBlock
-                        FontFamily="{StaticResource Primary}"
-                        Text="Good morning. Thou hast had a good night's sleep, I hope."
-                        TextWrapping="Wrap" />
-                </nes:Container>
+            </nes:Container>
 
 
-                <!--<Path Stroke="Black" StrokeThickness="2">
-                    <Path.Data>
-                        <GeometryGroup>
-                            <LineGeometry StartPoint="0,0" EndPoint="0,200" />
+            <nes:Container Title="Containers" Margin="20">
 
-                        </GeometryGroup>
-                    </Path.Data>
-                </Path>-->
+                <StackPanel Orientation="Vertical">
 
-            </StackPanel>
+                    <nes:Container
+                        Title="Center"
+                        Height="200"
+                        Margin="20"
+                        TitleHorizontalAlignment="Center">
+                        <TextBlock
+                            FontFamily="{StaticResource Primary}"
+                            Text="Good morning. Thou hast had a good night's sleep, I hope."
+                            TextWrapping="Wrap" />
+                    </nes:Container>
+
+                    <nes:Container
+                        Title="Left"
+                        Height="200"
+                        Margin="20"
+                        TitleHorizontalAlignment="Left">
+                        <TextBlock
+                            FontFamily="{StaticResource Primary}"
+                            Text="Good morning. Thou hast had a good night's sleep, I hope."
+                            TextWrapping="Wrap" />
+                    </nes:Container>
+
+                    <nes:Container
+                        Title="Right"
+                        Height="200"
+                        Margin="20"
+                        TitleHorizontalAlignment="Right">
+                        <TextBlock
+                            FontFamily="{StaticResource Primary}"
+                            Text="Good morning. Thou hast had a good night's sleep, I hope."
+                            TextWrapping="Wrap" />
+                    </nes:Container>
+
+                </StackPanel>
+            </nes:Container>
+
 
 
 
 
         </StackPanel>
+
+
+
+
 
 
 

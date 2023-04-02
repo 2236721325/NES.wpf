@@ -8,15 +8,21 @@
 
                 <ControlTemplate TargetType="nes:Container">
                     <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
                         <Label
                             x:Name="title"
-                            HorizontalAlignment="Center"
+                            Grid.Row="0"
+                            Margin="{TemplateBinding TitleMargin}"
+                            HorizontalAlignment="{TemplateBinding TitleHorizontalAlignment}"
                             VerticalAlignment="Top"
                             Content="{TemplateBinding Title}"
                             FontFamily="{StaticResource Primary}"
-                            FontSize="{StaticResource HeadFontSize}" />
-                        <ContentPresenter Margin="30" />
-
+                            FontSize="{TemplateBinding TitleFontSize}" />
+                        <ContentPresenter Grid.Row="1" Margin="10,0" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
