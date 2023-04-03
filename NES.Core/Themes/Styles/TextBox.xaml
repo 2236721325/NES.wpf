@@ -1,0 +1,87 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:nes="clr-namespace:NES.Core.Controls">
+
+    <Style TargetType="{x:Type nes:TextBox}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="OutBorderBrush" Value="Black" />
+        <Setter Property="FontFamily" Value="{StaticResource Primary}" />
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+        <Setter Property="BorderThickness" Value="1.5" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="AllowDrop" Value="true" />
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type nes:TextBox}">
+
+                    <Border
+                        Margin="{TemplateBinding InnerMargin}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="2">
+                        <Border
+                            x:Name="border"
+                            Margin="10,10"
+                            Background="{TemplateBinding Background}">
+                            <ScrollViewer
+                                x:Name="PART_ContentHost"
+                                Focusable="false"
+                                HorizontalScrollBarVisibility="Hidden"
+                                VerticalScrollBarVisibility="Hidden" />
+                        </Border>
+                    </Border>
+
+
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="border" Property="Opacity" Value="0.56" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="False">
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true" />
+                    <Condition Property="IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style
+        x:Key="TextBoxSuccess"
+        BasedOn="{StaticResource {x:Type nes:TextBox}}"
+        TargetType="{x:Type nes:TextBox}">
+        <Setter Property="BorderBrush" Value="{StaticResource SuccessColorBrush}" />
+        <Setter Property="OutBorderBrush" Value="{StaticResource SuccessColorBrush}" />
+    </Style>
+    <Style
+        x:Key="TextBoxWarning"
+        BasedOn="{StaticResource {x:Type nes:TextBox}}"
+        TargetType="{x:Type nes:TextBox}">
+        <Setter Property="BorderBrush" Value="{StaticResource WarningColorBrush}" />
+        <Setter Property="OutBorderBrush" Value="{StaticResource WarningColorBrush}" />
+
+    </Style>
+    <Style
+        x:Key="TextBoxError"
+        BasedOn="{StaticResource {x:Type nes:TextBox}}"
+        TargetType="{x:Type nes:TextBox}">
+        <Setter Property="BorderBrush" Value="{StaticResource ErrorColorBrush}" />
+        <Setter Property="OutBorderBrush" Value="{StaticResource ErrorColorBrush}" />
+    </Style>
+</ResourceDictionary>

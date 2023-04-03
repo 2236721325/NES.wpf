@@ -15,6 +15,8 @@
                 <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Styles/Label.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Styles/Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Styles/Container.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Styles/TextBox.xaml" />
+
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
