@@ -64,6 +64,17 @@
                 </WrapPanel>
 
             </nes:Container>
+            <nes:Container Title="TextBox" Margin="20">
+
+
+                <WrapPanel Margin="20,20,0,20">
+                    <nes:TextBox
+                        Width="200"
+                        Height="100"
+                        Text="Hello" />
+                </WrapPanel>
+            </nes:Container>
+
 
             <nes:Container Title="中文字体" Margin="20">
                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
@@ -106,6 +117,8 @@
 
                 </StackPanel>
             </nes:Container>
+
+
 
 
             <nes:Container Title="Containers" Margin="20">
