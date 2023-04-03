@@ -68,10 +68,7 @@
 
 
                 <WrapPanel Margin="20,20,0,20">
-                    <nes:TextBox
-                        Width="200"
-                        Height="100"
-                        Text="Hello" />
+                    <nes:TextBox Width="200" Text="Hello" />
                 </WrapPanel>
             </nes:Container>
 
