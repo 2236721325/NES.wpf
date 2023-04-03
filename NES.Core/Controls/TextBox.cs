@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace NES.Core.Controls
 {
-    public class TextBox: System.Windows.Controls.TextBox
+    public class TextBox : System.Windows.Controls.TextBox
     {
 
         public Thickness OutBorderThickness
@@ -35,10 +35,6 @@ namespace NES.Core.Controls
         public static readonly DependencyProperty OutBorderBrushProperty =
             DependencyProperty.Register("OutBorderBrush", typeof(SolidColorBrush), typeof(TextBox), new PropertyMetadata(new SolidColorBrush(Colors.Black)));
 
-
-
-
-
         public Thickness InnerMargin
         {
             get { return (Thickness)GetValue(InnerMarginProperty); }
@@ -51,11 +47,66 @@ namespace NES.Core.Controls
             DependencyProperty.Register("InnerMargin", typeof(Thickness), typeof(TextBox), new PropertyMetadata(new Thickness(2.5, 2.5, 2.5, 2.5)));
 
 
+        
+
+
+
+
+       
+
+
         protected override void OnRender(DrawingContext drawingContext)
         {
-            
-            base.OnRender(drawingContext);
-            var pen = new Pen(OutBorderBrush, (OutBorderThickness.Left+OutBorderThickness.Right+OutBorderThickness.Bottom+OutBorderThickness.Top)/4);
+
+            //            int[,] iconCoin = new int[,]
+            //{
+            //    {0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0},
+            //    {0,0,0,1,1,1,2,2,2,1,1,1,1,0,0,0},
+            //    {0,0,1,1,2,2,3,3,3,3,3,1,1,0,0,0},
+            //    {0,0,1,2,3,3,2,2,2,1,3,3,1,1,0,0},
+            //    {0,1,1,2,3,3,2,3,3,1,3,3,1,1,0,0},
+            //    {0,1,2,3,3,3,2,3,3,1,3,3,3,1,1,0},
+            //    {0,1,2,3,3,3,2,3,3,1,3,3,3,1,1,0},
+            //    {0,1,2,3,3,3,2,3,3,1,3,3,3,1,1,0},
+            //    {0,1,2,3,3,3,2,3,3,1,3,3,3,1,1,0},
+            //    {0,1,2,3,3,3,2,3,3,1,3,3,3,1,1,0},
+            //    {0,1,2,3,3,3,2,3,3,1,3,3,3,1,1,0},
+            //    {0,1,1,2,3,3,2,3,3,1,3,3,1,1,0,0},
+            //    {0,0,1,2,3,3,2,1,1,1,3,3,1,1,0,0},
+            //    {0,0,1,1,2,3,3,3,3,3,3,1,1,0,0,0},
+            //    {0,0,0,1,1,1,3,3,3,1,1,1,1,0,0,0},
+            //    {0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0}
+            //};
+            //            SolidColorBrush blackBrush = new SolidColorBrush(Colors.Black);
+            //            SolidColorBrush whiteBrush = new SolidColorBrush(Colors.White);
+            //            SolidColorBrush yellowBrush = new SolidColorBrush(Color.FromRgb(255, 193, 7)); // #ffc107
+
+            //            int size = 16;
+            //            int pixelSize = 10;
+
+            //            for (int i = 0; i < size; i++)
+            //            {
+            //                for (int j = 0; j < size; j++)
+            //                {
+            //                    Rect pixelRect = new Rect(j * pixelSize, i * pixelSize, pixelSize, pixelSize);
+
+            //                    switch (iconCoin[i, j])
+            //                    {
+            //                        case 1:
+            //                            drawingContext.DrawRectangle(blackBrush, null, pixelRect);
+            //                            break;
+            //                        case 2:
+            //                            drawingContext.DrawRectangle(whiteBrush, null, pixelRect);
+            //                            break;
+            //                        case 3:
+            //                            drawingContext.DrawRectangle(yellowBrush, null, pixelRect);
+            //                            break;
+            //                    }
+            //                }
+            //            }
+
+
+            var pen = new Pen(OutBorderBrush, (OutBorderThickness.Top + OutBorderThickness.Left + OutBorderThickness.Right + OutBorderThickness.Bottom) / 4);
             DrawHelper.DrawPixRectangle(drawingContext, pen, ActualWidth, ActualHeight);
         }
     }
