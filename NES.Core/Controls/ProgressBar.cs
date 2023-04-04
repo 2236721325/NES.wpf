@@ -10,6 +10,7 @@ namespace NES.Core.Controls
 {
     public class ProgressBar:System.Windows.Controls.ProgressBar
     {
+        
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);

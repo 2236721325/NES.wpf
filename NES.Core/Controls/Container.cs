@@ -124,6 +124,8 @@ namespace NES.Core.Controls
 
              _title= GetTemplateChild("title") as Label;
         }
+
+        //看到这里 你是否绷不住了 给我绷住啊啊啊啊啊啊啊啊啊啊啊
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
