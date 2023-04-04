@@ -15,7 +15,36 @@
 
     <ScrollViewer>
 
+
         <StackPanel Orientation="Vertical">
+
+
+
+
+            <nes:Container Title="ProgressBar" Margin="20">
+                <StackPanel>
+                    <nes:ProgressBar
+                        Height="40"
+                        Margin="0,30"
+                        IsIndeterminate="True" />
+                    <nes:ProgressBar
+                        Height="40"
+                        Margin="0,30"
+                        IsIndeterminate="True"
+                        Style="{StaticResource PrimaryProgressBar}" />
+
+                    <nes:ProgressBar
+                        Height="40"
+                        Margin="0,30"
+                        IsIndeterminate="True"
+                        Style="{StaticResource WarningProgressBar}" />
+                    <nes:ProgressBar
+                        Height="40"
+                        Margin="0,30"
+                        IsIndeterminate="True"
+                        Style="{StaticResource ErrorProgressBar}" />
+                </StackPanel>
+            </nes:Container>
             <nes:Container Title="Label" Margin="20">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <Label Content="Primary" Style="{StaticResource LabelPrimary}" />

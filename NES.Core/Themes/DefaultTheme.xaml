@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Converters.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Fonts.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+
+</ResourceDictionary>
