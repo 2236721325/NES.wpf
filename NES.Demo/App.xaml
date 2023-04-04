@@ -7,15 +7,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Converters.xaml" />
 
-                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/DefaultTheme.xaml" />
 
-                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Styles/Label.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Styles/Button.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Styles/Container.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Styles/TextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Generic.xaml" />
+
 
 
             </ResourceDictionary.MergedDictionaries>
