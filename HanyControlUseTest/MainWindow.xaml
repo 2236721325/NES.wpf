@@ -1,0 +1,32 @@
+﻿<Window
+    x:Class="HanyControlUseTest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:HanyControlUseTest"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:nes="clr-namespace:NES.Core.Controls;assembly=NES.Core"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+
+        <StackPanel>
+            <RadioButton
+                Width="100"
+                Height="100"
+                HorizontalAlignment="Left"
+                Content="Hello"
+                GroupName="first" />
+            <RadioButton Content="Hello" GroupName="first" />
+            <nes:RadioButton
+                HorizontalAlignment="Left"
+                Content="Hello"
+                GroupName="Hello" />
+            <nes:RadioButton Content="Hello" GroupName="Hello" />
+
+        </StackPanel>
+    </Grid>
+</Window>

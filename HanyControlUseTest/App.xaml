@@ -1,17 +1,21 @@
 ﻿<Application
-    x:Class="NES.Demo.App"
+    x:Class="HanyControlUseTest.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:NES.Demo"
+    xmlns:local="clr-namespace:HanyControlUseTest"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
+
+
 
                 <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/DefaultTheme.xaml" />
 
                 <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Generic.xaml" />
-                
+
 
 
             </ResourceDictionary.MergedDictionaries>

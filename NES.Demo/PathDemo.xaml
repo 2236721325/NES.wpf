@@ -11,14 +11,16 @@
     mc:Ignorable="d">
     <Grid>
         <Grid
-            Width="6"
-            Height="7"
+            Width="10"
+            Height="10"
             HorizontalAlignment="Center">
             <Path
-                Data="M0 0 L0 7 2 7 2 6 4 6 4 5 5 5 5 4 6 4 6 3 5 3 5 2 4 2 4 1 2 1 2 0 0 0 z"
-                Fill="Black"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Data="m0 0 L10 0 10 10 0 10 0 0 z "
                 SnapsToDevicePixels="True"
-                Stretch="Uniform" />
+                Stroke="Black"
+                StrokeThickness="1" />
 
         </Grid>
 

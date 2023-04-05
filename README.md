@@ -13,7 +13,8 @@ https://nostalgic-css.github.io/NES.css/
 
 
 ## 目前实现控件比较少
-
+在某些方面 参考HanyControl的一些控件的默认的使用习惯
+让控件使用起来跟HanyControl 一样
 
 
 ![截图](https://github.com/2236721325/NES.wpf/blob/master/screenshot/current.png)
