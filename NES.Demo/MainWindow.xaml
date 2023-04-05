@@ -22,14 +22,20 @@
             <nes:Container Title="CheckBox" Margin="20">
                 <StackPanel Height="100" Orientation="Vertical">
                     <nes:CheckBox
-                        Height="50"
+                        Width="100"
+                        Height="30"
                         Margin="10,0"
-                        Content="Yes" />
+                        HorizontalAlignment="Left"
+                        Content="Yes"
+                        MarkHeight="27" />
 
                     <nes:CheckBox
-                        Height="50"
+                        Width="100"
+                        Height="30"
                         Margin="10,0"
-                        Content="No" />
+                        HorizontalAlignment="Left"
+                        Content="No"
+                        MarkHeight="27" />
 
 
 

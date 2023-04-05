@@ -30,25 +30,17 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <SolidColorBrush x:Key="RadioButton.Static.Background" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="RadioButton.Static.Border" Color="#FF707070" />
-    <SolidColorBrush x:Key="RadioButton.Static.Glyph" Color="#FF212121" />
-    <SolidColorBrush x:Key="RadioButton.MouseOver.Background" Color="#FFF3F9FF" />
-    <SolidColorBrush x:Key="RadioButton.MouseOver.Border" Color="#FF5593FF" />
-    <SolidColorBrush x:Key="RadioButton.MouseOver.Glyph" Color="#FF212121" />
-    <SolidColorBrush x:Key="RadioButton.Pressed.Background" Color="#FFD9ECFF" />
-    <SolidColorBrush x:Key="RadioButton.Pressed.Border" Color="#FF3C77DD" />
-    <SolidColorBrush x:Key="RadioButton.Pressed.Glyph" Color="#FF212121" />
-    <SolidColorBrush x:Key="RadioButton.Disabled.Background" Color="#FFE6E6E6" />
-    <SolidColorBrush x:Key="RadioButton.Disabled.Border" Color="#FFBCBCBC" />
-    <SolidColorBrush x:Key="RadioButton.Disabled.Glyph" Color="#FF707070" />
+
     <Style TargetType="{x:Type nes:RadioButton}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="FontSize" Value="{StaticResource HeadFontSize}" />
-
-        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource Primary}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type nes:RadioButton}">
@@ -66,21 +58,20 @@
                         </Storyboard>
 
                     </ControlTemplate.Resources>
-                    <Grid
-                        x:Name="templateRoot"
-                        Width="{TemplateBinding Width}"
-                        Height="{TemplateBinding Height}"
-                        Background="{TemplateBinding Background}">
+                    <Grid x:Name="templateRoot" Background="{TemplateBinding Background}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Grid Height="{TemplateBinding FontSize}">
+                        <Grid
+                            Height="{TemplateBinding FontSize}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
                             <Path
                                 x:Name="optionMark"
                                 Margin="2"
                                 Data="{StaticResource arrow_right}"
-                                Fill="{StaticResource RadioButton.Static.Glyph}"
+                                Fill="{TemplateBinding Foreground}"
                                 Opacity="0"
                                 SnapsToDevicePixels="True"
                                 Stretch="UniformToFill" />
@@ -90,8 +81,8 @@
                             x:Name="contentPresenter"
                             Grid.Column="1"
                             Margin="{TemplateBinding Padding}"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             Focusable="False"
                             RecognizesAccessKey="True"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />

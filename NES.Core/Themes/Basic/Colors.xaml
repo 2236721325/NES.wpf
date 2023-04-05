@@ -20,12 +20,15 @@
     <Color x:Key="WhiteTextColor">#FFFFFFFF</Color>
 
 
+    <Color x:Key="GreyColor">#FFD3D3D3</Color>
 
 
 
 
 
 
+
+    <SolidColorBrush x:Key="GreyColorBrush" Color="{StaticResource GreyColor}" />
     <SolidColorBrush x:Key="PrimaryTextBrush" Color="{StaticResource PrimaryTextColor}" />
     <SolidColorBrush x:Key="WhiteTextColorBrush" Color="{StaticResource WhiteTextColor}" />
 
