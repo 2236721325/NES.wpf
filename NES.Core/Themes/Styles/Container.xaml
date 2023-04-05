@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:nes="clr-namespace:NES.Core.Controls">
     <Style TargetType="nes:Container">
+        <Setter Property="FontFamily" Value="{StaticResource Primary}" />
         <Setter Property="Template">
             <Setter.Value>
 
@@ -20,7 +21,7 @@
                             HorizontalAlignment="{TemplateBinding TitleHorizontalAlignment}"
                             VerticalAlignment="Top"
                             Content="{TemplateBinding Title}"
-                            FontFamily="{StaticResource Primary}"
+                            FontFamily="{TemplateBinding FontFamily}"
                             FontSize="{TemplateBinding TitleFontSize}" />
                         <ContentPresenter Grid.Row="1" Margin="10,0" />
                     </Grid>

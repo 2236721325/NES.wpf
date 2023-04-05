@@ -21,4 +21,17 @@ namespace NES.Core.Utilities.Converters
             throw new NotImplementedException();
         }
     }
+
+    public class TestGridConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
