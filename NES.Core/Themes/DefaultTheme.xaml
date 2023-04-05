@@ -4,6 +4,8 @@
         <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Converters.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Fonts.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Nes.Core;component/Themes/Basic/Images.xaml" />
+
     </ResourceDictionary.MergedDictionaries>
 
 
